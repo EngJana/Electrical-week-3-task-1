@@ -90,10 +90,10 @@ Output: Voltage values are printed every 500 milliseconds.
 -	#define LCD_COLUMNS 20: Defines the number of columns on the LCD display.
 -	#define LCD_LINES 4: Defines the number of lines on the LCD display.
 #### Pin Definition and Object Initialization
-const int DHT_PIN = 15: Defines the GPIO pin connected to the DHT22 sensor's data pin.
+-   const int DHT_PIN = 15: Defines the GPIO pin connected to the DHT22 sensor's data pin.
 -	DHTesp dhtSensor: Creates an instance of the DHTesp class.
 -	LiquidCrystal_I2C lcd(I2C_ADDR, LCD_COLUMNS, LCD_LINES): Creates an instance of the LiquidCrystal_I2C class.
--	Setup Function
+#### Setup Function
 -	Serial.begin(115200): Initializes serial communication at a baud rate of 115200.
 -	dhtSensor.setup(DHT_PIN, DHTesp::DHT22): Initializes the DHT22 sensor.
 -	lcd.init(): Initializes the LCD display.
