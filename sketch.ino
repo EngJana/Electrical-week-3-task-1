@@ -1,34 +1,36 @@
-#include <Arduino.h>
+#include "DHTesp.h"
 #include <LiquidCrystal_I2C.h>
-
 #define I2C_ADDR 0x27
 #define LCD_COLUMNS 20
 #define LCD_LINES 4
 
-const int analogPin = 34; // GPIO pin for analog input
-int ldrValue = 0; // Variable to store the analog value
+const int DHT_PIN = 15;
 
-LiquidCrystal_I2C lcd(I2C_ADDR, LCD_COLUMNS, LCD_LINES); // Create an instance of the LiquidCrystal_I2C class
+DHTesp dhtSensor;
+
+LiquidCrystal_I2C lcd(I2C_ADDR, LCD_COLUMNS, LCD_LINES);
 
 void setup() {
-  Serial.begin(115200); // Initialize serial communication
-  lcd.init(); // Initialize the LCD
-  lcd.backlight(); // Turn on the LCD backlight
+
+Serial.begin(115200);
+dhtSensor.setup(DHT_PIN, DHTesp::DHT22);
+lcd.init();
+lcd.backlight();
+
 }
 
 void loop() {
-  ldrValue = analogRead(analogPin); // Read the analog value from the LDR
-  float voltage = ldrValue * (3.3 / 4095.0); // Convert the analog value to voltage
 
-  Serial.print("LDR Voltage: "); // Print the voltage to the serial monitor
-  Serial.print(voltage);
-  Serial.println(" V");
+TempAndHumidity data = dhtSensor.getTempAndHumidity();
+Serial.println("Temp: " + String(data.temperature, 1) + "°C");
+Serial.println("Humidity: " + String(data.humidity, 1) + "%");
+Serial.println("---");
 
-  lcd.setCursor(0, 0); // Set the cursor to the first column, first row
-  lcd.print("LDR Voltage: "); // Print "LDR Voltage:" on the LCD
-  lcd.setCursor(0, 1); // Set the cursor to the first column, second row
-  lcd.print(voltage); // Print the voltage value on the LCD
-  lcd.print(" V"); // Print " V" after the voltage value
+lcd.setCursor(0, 0);
+lcd.print(" Temp: " + String(data.temperature, 1) + "\xDF"+"C ");
+lcd.setCursor(0, 1);
+lcd.print(" Humidity: " + String(data.humidity, 1) + "% ");
+lcd.print("Wokwi Online IoT");
 
-  delay(500); // Wait for 500 milliseconds before repeating the loop
+delay(1000);
 }
