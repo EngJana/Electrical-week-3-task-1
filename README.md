@@ -66,7 +66,8 @@ An LDR's resistance decreases as light intensity increases. It forms a voltage d
 Voltage Divider: Produces a varying voltage based on light intensity.
 Analog Reading: The ESP32 reads this voltage at its analog input.
 Conversion to Voltage: Converts the raw ADC value to voltage using:
-Voltage = analog value × (3.3 / 4095.0)
+##### Voltage = analog value × (3.3 / 4095.0)
+
 #### Serial Communication
 The ESP32 sends voltage readings to the Serial Monitor for real-time observation.
 Baud Rate: Set to 115200 baud.
