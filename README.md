@@ -8,26 +8,26 @@ This repository contains code for interfacing an ESP32 microcontroller with a DH
 # Table of Contents
 -	Components
 -	How It Works
-o	ESP32 with DHT22 and I2C LCD
-	ESP32
-	DHT22 Sensor
-	I2C LCD Display
-o	ESP32 Analog Read Example with LDR
-	ESP32 Microcontroller
-	Light-Dependent Resistor (LDR)
-	Serial Communication
+  - ESP32 with DHT22 and I2C LCD
+    -	ESP32
+    -	DHT22 Sensor
+    - I2C LCD Display
+  - ESP32 Analog Read Example with LDR
+    -	ESP32 Microcontroller
+    -	Light-Dependent Resistor (LDR)
+    -	Serial Communication
 -	Circuit Diagrams
 -	Code Explanation
-o	ESP32 with DHT22 and I2C LCD
-	Libraries and Definitions
-	Pin Definition and Object Initialization
-	Setup Function
-	Loop Function	
-o	ESP32 Analog Read Example with LDR
-	Libraries and Definitions
-	Pin Definition and Object Initialization
-	Setup Function
-	Loop Function
+  - ESP32 with DHT22 and I2C LCD
+    - Libraries and Definitions
+    -	Pin Definition and Object Initialization
+    -	Setup Function
+    -	Loop Function	
+  -	ESP32 Analog Read Example with LDR
+    -	Libraries and Definitions
+    -	Pin Definition and Object Initialization
+    -	Setup Function
+    -	Loop Function
 
 ## Components
 -	ESP32 Development Board
