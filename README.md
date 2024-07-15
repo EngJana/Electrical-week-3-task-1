@@ -1,6 +1,6 @@
 # Electrical-week-3-task-1
 
-Week 3 task 1: design, code, and explain ESP32 circuits one with a digital sensor and the other with an analog sensors 
+Week 3 task 1: design, code, and explain ESP32 circuits one with a digital sensor and the other with an analog sensors in wokwi
 
 # ESP32 Sensor Interfacing Project
 This repository contains code for interfacing an ESP32 microcontroller with a DHT22 temperature and humidity sensor, an I2C LCD display, and an example of reading analog values from a Light-Dependent Resistor (LDR) using the ESP32.
